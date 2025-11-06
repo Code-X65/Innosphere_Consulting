@@ -18,7 +18,7 @@ import { Facebook, MessageCircle, Instagram, Linkedin, Mail, Phone, MapPin } fro
 
 const App = () => {
   return (
-    <Router>
+    <Router basename='/Innosphere_Consulting'>
       <ScrollToTop />
       <Navbar />
       <Routes>
