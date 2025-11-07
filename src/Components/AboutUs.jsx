@@ -95,7 +95,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative pt-40 min-h-screen bg-black text-white overflow-hidden">
 {/* Background Video - Component Only */}
 <div className="absolute inset-0 z-0 overflow-hidden">
   <video 
@@ -142,7 +142,7 @@ const AboutUs = () => {
 
   <p className="text-gray-300 leading-relaxed">
     We combine strategic thinking with technological expertise to deliver 
-    <span className="text-white font-semibold"> measurable results</span>, empowering our clients to innovate, grow, and lead in the evolving digital economy.
+    <span className=  "text-white font-semibold"> measurable results</span>, empowering our clients to innovate, grow, and lead in the evolving digital economy.
   </p>
 </div>
 
@@ -160,7 +160,7 @@ const AboutUs = () => {
           </div>
 
           {/* Bottom Card */}
-          <Link to="/about" ref={cardRef} className="flex justify-end">
+          {/* <Link to="/about" ref={cardRef} className="flex justify-end">
             <div className="group bg-gradient-to-r from-cyan-500 to-blue-500 p-4 flex items-center gap-6 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 max-w-md">
               
               <div className="flex-1">
@@ -172,7 +172,7 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-          </Link>
+          </Link> */}
         </div>
       </section>
 

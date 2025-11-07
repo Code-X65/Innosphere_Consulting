@@ -17,7 +17,7 @@ const Homepage = () => {
     <Hero />
     <StatsBar />
     <SolutionsApp />
-    <AboutUs />
+    {/* <AboutUs /> */}
     <Testimonials />
     {/* <ServicesOverview /> */}
     {/* <StrategicDifferentiators /> */}

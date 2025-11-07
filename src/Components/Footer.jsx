@@ -11,6 +11,7 @@ import {
   Send
 } from 'lucide-react';
 import Logo from '../assets/Logo.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 const [email, setEmail] = useState('');
@@ -73,11 +74,10 @@ const handleSubscribe = async (e) => {
 };
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', name: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', name: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com', name: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com', name: 'Instagram' },
-    { icon: Youtube, href: 'https://youtube.com', name: 'YouTube' }
+    { icon: Facebook, href: 'https://www.facebook.com/share/1PpyynWHqF/', name: 'Facebook' },
+    { icon: Twitter, href: 'https://x.com/innosphere__?s=21', name: 'Twitter' },
+    { icon: Instagram, href: 'https://www.instagram.com/innosphereconsult/', name: 'Instagram' },
+
   ];
 
   const contactInfo = [
@@ -208,17 +208,17 @@ const handleSubscribe = async (e) => {
             </p>
             
             <div className="flex items-center gap-4">
-              <a href="/privacy-policy" className="text-gray-500 hover:text-blue-400 transition-colors">
+              <Link to="/Privacy_Policy" className="text-gray-500 hover:text-blue-400 transition-colors">
                 Privacy
-              </a>
+              </Link>
               <span className="text-gray-700">•</span>
-              <a href="/terms" className="text-gray-500 hover:text-blue-400 transition-colors">
-                Terms
-              </a>
-              <span className="text-gray-700">•</span>
-              <a href="/cookies" className="text-gray-500 hover:text-blue-400 transition-colors">
+              <Link to="/Term_&_Condition" className="text-gray-500 hover:text-blue-400 transition-colors">
+                Terms And Condition
+              </Link>
+              {/* <span className="text-gray-700">•</span> */}
+              {/* <a href="/cookies" className="text-gray-500 hover:text-blue-400 transition-colors">
                 Cookies
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
