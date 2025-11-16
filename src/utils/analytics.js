@@ -13,7 +13,7 @@ const STORAGE_KEYS = {
 // Initialize GA4
 export const initGA = () => {
   try {
-    ReactGA.initialize("G-YR41KNK4DC", {
+    ReactGA.initialize("G-JJ7L25T8TX", {
       gaOptions: {
         debug_mode: isDevelopment,
       },
@@ -115,6 +115,7 @@ const getPageTitle = (pathname) => {
 };
 
 // Log page views
+// Log page views (GA4 optimized)
 export const logPageView = (path, title) => {
   try {
     const pagePath = path || window.location.pathname + window.location.search;
@@ -125,12 +126,21 @@ export const logPageView = (path, title) => {
     const newCount = currentCount + 1;
     localStorage.setItem(STORAGE_KEYS.PAGE_COUNT, newCount.toString());
     
-    // Send page view with custom parameters
+    // Use gtag for GA4
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_title: pageTitle,
+        page_location: window.location.href,
+        page_path: pagePath,
+        page_count: newCount
+      });
+    }
+    
+    // Fallback to ReactGA
     ReactGA.send({ 
       hitType: "pageview", 
       page: pagePath,
-      title: pageTitle,
-      page_count: newCount // Custom parameter
+      title: pageTitle
     });
     
     // Track pages viewed milestone
