@@ -1,23 +1,47 @@
 import React, { useState } from 'react';
 import { CheckCircle, Rocket, TrendingUp, Cpu, Layers, Users, Phone, Clock, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function ConsultantForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-const [submitError, setSubmitError] = useState('');
+  const [submitError, setSubmitError] = useState('');
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     fullName: '',
     businessName: '',
     contact: '',
-    businessGoal: '',
+    businessGoal: [],
     businessSize: '',
     startTime: '',
     consultationType: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleChange = (field, value) => {
-    setFormData({ ...formData, [field]: value });
+    if (field === 'businessGoal') {
+      const notSureOption = 'Not sure — I need expert advice';
+      
+      // If clicking "Not sure" option
+      if (value === notSureOption) {
+        setFormData({ ...formData, [field]: [notSureOption] });
+      } 
+      // If "Not sure" is already selected, replace it with new selection
+      else if (formData.businessGoal.includes(notSureOption)) {
+        setFormData({ ...formData, [field]: [value] });
+      }
+      // Toggle selection for other options
+      else {
+        const currentGoals = formData.businessGoal;
+        if (currentGoals.includes(value)) {
+          setFormData({ ...formData, [field]: currentGoals.filter(g => g !== value) });
+        } else {
+          setFormData({ ...formData, [field]: [...currentGoals, value] });
+        }
+      }
+    } else {
+      setFormData({ ...formData, [field]: value });
+    }
   };
 
   const isStep1Valid = () => {
@@ -25,7 +49,7 @@ const [submitError, setSubmitError] = useState('');
   };
 
   const isStep2Valid = () => {
-    return formData.businessGoal && formData.businessSize;
+    return formData.businessGoal.length > 0 && formData.businessSize;
   };
 
   const isStep3Valid = () => {
@@ -37,8 +61,8 @@ const [submitError, setSubmitError] = useState('');
     else if (step === 2 && isStep2Valid()) setStep(3);
   };
 
-const handleSubmit = async () => {
-  if (isStep3Valid()) {
+  const handleSubmit = async () => {
+    setShowConfirmation(false);
     setIsSubmitting(true);
     setSubmitError('');
     
@@ -52,7 +76,7 @@ const handleSubmit = async () => {
           fullName: formData.fullName,
           businessName: formData.businessName,
           contact: formData.contact,
-          businessGoal: formData.businessGoal,
+          businessGoal: formData.businessGoal.join(', '),
           businessSize: formData.businessSize,
           startTime: formData.startTime,
           consultationType: formData.consultationType
@@ -69,8 +93,7 @@ const handleSubmit = async () => {
     } finally {
       setIsSubmitting(false);
     }
-  }
-};
+  };
 
   const goalOptions = [
     { label: 'Grow revenue & attract more customers', icon: <TrendingUp size={20} /> },
@@ -80,40 +103,115 @@ const handleSubmit = async () => {
     { label: 'Not sure — I need expert advice', icon: <Phone size={20} /> }
   ];
 
+  const businessSizeOptions = [
+    'Startup (1–10 employees)',
+    'Small Business (11–50 employees)',
+    'Mid-size (51–200 employees)',
+    'Large Organization (200+)'
+  ];
+
+  const startTimeOptions = [
+    'Immediately',
+    'Within the next 30 days',
+    'Within 3 months',
+    'Just exploring for now'
+  ];
+
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4">
         <div className="max-w-lg w-full bg-gray-800 rounded-2xl p-8 text-center">
-          <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-[#6b9dc7] rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle size={32} className="text-white" />
           </div>
           <h2 className="text-3xl font-bold text-white mb-3">Request Submitted!</h2>
           <p className="text-gray-300 mb-6">You'll hear from one of our consultants within a working day to discuss your business goals.</p>
-          <button
-            onClick={() => {
-              setSubmitted(false);
-              setStep(1);
-              setFormData({
-                fullName: '',
-                businessName: '',
-                contact: '',
-                businessGoal: '',
-                businessSize: '',
-                startTime: '',
-                consultationType: ''
-              });
-            }}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
+         <Link to='/'> <button
+          
+            className="px-6 py-3 bg-[#6b9dc7] text-white rounded-lg font-medium hover:bg-[#5a8bb5] transition"
           >
-            Submit Another Request
+            Keep Expoloring
           </button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Confirmation Modal
+  if (showConfirmation) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center pb-8 pt-35">
+        <div className="max-w-2xl w-full bg-gray-800 rounded-2xl p-8 shadow-2xl">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">Review Your Information</h2>
+          
+          <div className="space-y-4 mb-8">
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-400 text-sm mb-1">Full Name</p>
+              <p className="text-white font-medium">{formData.fullName}</p>
+            </div>
+
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-400 text-sm mb-1">Business Name</p>
+              <p className="text-white font-medium">{formData.businessName}</p>
+            </div>
+
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-400 text-sm mb-1">Contact</p>
+              <p className="text-white font-medium">{formData.contact}</p>
+            </div>
+
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-400 text-sm mb-1">Business Goals</p>
+              <div className="space-y-1">
+                {formData.businessGoal.map((goal, index) => (
+                  <p key={index} className="text-white font-medium">• {goal}</p>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-400 text-sm mb-1">Business Size</p>
+              <p className="text-white font-medium">{formData.businessSize}</p>
+            </div>
+
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-400 text-sm mb-1">Start Time</p>
+              <p className="text-white font-medium">{formData.startTime}</p>
+            </div>
+
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-400 text-sm mb-1">Consultation Type</p>
+              <p className="text-white font-medium">{formData.consultationType}</p>
+            </div>
+          </div>
+
+          <div className="flex gap-3">
+            <button
+              onClick={() => setShowConfirmation(false)}
+              className="flex-1 px-6 py-3 bg-gray-700 text-gray-300 rounded-lg font-semibold hover:bg-gray-600 transition"
+            >
+              Go Back to Edit
+            </button>
+            <button
+              onClick={handleSubmit}
+              disabled={isSubmitting}
+              className={`flex-1 px-6 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2 ${
+                isSubmitting
+                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                  : 'bg-[#6b9dc7] text-white hover:bg-[#2f5d83]'
+              }`}
+            >
+              {isSubmitting ? 'Submitting...' : 'Confirm & Submit'} <CheckCircle size={18} />
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 py-12 px-4">
+    <div className="bg-slate-950 pt-35 px-4 min-h-screen py-12">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -123,25 +221,25 @@ const handleSubmit = async () => {
 
         {/* Progress Steps */}
         <div className="flex items-center justify-between mb-10 px-4">
-          <div className="flex items-center gap-2">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step >= 1 ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
+          <div className="flex flex-col items-center gap-2">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step >= 1 ? 'bg-[#6b9dc7] text-white' : 'bg-gray-700 text-gray-400'}`}>
               {step > 1 ? '✓' : '1'}
             </div>
-            <span className={`text-sm font-medium hidden sm:inline ${step >= 1 ? 'text-white' : 'text-gray-500'}`}>Contact</span>
+            <span className={`text-xs sm:text-sm font-medium ${step >= 1 ? 'text-white' : 'text-gray-500'}`}>Details</span>
           </div>
-          <div className={`flex-1 h-1 mx-3 ${step >= 2 ? 'bg-blue-600' : 'bg-gray-700'}`}></div>
-          <div className="flex items-center gap-2">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step >= 2 ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
+          <div className={`flex-1 h-1 mx-3 ${step >= 2 ? 'bg-[#6b9dc7]' : 'bg-gray-700'}`}></div>
+          <div className="flex flex-col items-center gap-2">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step >= 2 ? 'bg-[#6b9dc7] text-white' : 'bg-gray-700 text-gray-400'}`}>
               {step > 2 ? '✓' : '2'}
             </div>
-            <span className={`text-sm font-medium hidden sm:inline ${step >= 2 ? 'text-white' : 'text-gray-500'}`}>Details</span>
+            <span className={`text-xs sm:text-sm font-medium ${step >= 2 ? 'text-white' : 'text-gray-500'}`}>Needs</span>
           </div>
-          <div className={`flex-1 h-1 mx-3 ${step >= 3 ? 'bg-blue-600' : 'bg-gray-700'}`}></div>
-          <div className="flex items-center gap-2">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step >= 3 ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-400'}`}>
+          <div className={`flex-1 h-1 mx-3 ${step >= 3 ? 'bg-[#6b9dc7]' : 'bg-gray-700'}`}></div>
+          <div className="flex flex-col items-center gap-2">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step >= 3 ? 'bg-[#6b9dc7] text-white' : 'bg-gray-700 text-gray-400'}`}>
               3
             </div>
-            <span className={`text-sm font-medium hidden sm:inline ${step >= 3 ? 'text-white' : 'text-gray-500'}`}>Schedule</span>
+            <span className={`text-xs sm:text-sm font-medium ${step >= 3 ? 'text-white' : 'text-gray-500'}`}>Expectations</span>
           </div>
         </div>
 
@@ -193,7 +291,7 @@ const handleSubmit = async () => {
                   disabled={!isStep1Valid()}
                   className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${
                     isStep1Valid()
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      ? 'bg-[#6b9dc7] text-white hover:bg-[#5a8bb5]'
                       : 'bg-gray-700 text-gray-500 cursor-not-allowed'
                   }`}
                 >
@@ -212,14 +310,15 @@ const handleSubmit = async () => {
               <div className="space-y-5">
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-3">What's your biggest business goal right now? *</label>
+                  <p className="text-gray-400 text-xs mb-3">Select one or more options</p>
                   <div className="space-y-2">
                     {goalOptions.map((goal) => (
                       <button
                         key={goal.label}
                         onClick={() => handleChange('businessGoal', goal.label)}
                         className={`w-full p-3 rounded-lg text-left flex items-center gap-3 transition ${
-                          formData.businessGoal === goal.label
-                            ? 'bg-blue-600 text-white border-2 border-blue-500'
+                          formData.businessGoal.includes(goal.label)
+                            ? 'bg-[#6b9dc7] text-white border-2 border-blue-500'
                             : 'bg-gray-700 text-gray-300 border-2 border-transparent hover:border-gray-600'
                         }`}
                       >
@@ -231,18 +330,22 @@ const handleSubmit = async () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">What's your business size? *</label>
-                  <select
-                    value={formData.businessSize}
-                    onChange={(e) => handleChange('businessSize', e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500 transition cursor-pointer"
-                  >
-                    <option value="">Select business size</option>
-                    <option value="Startup (1–10 employees)">Startup (1–10 employees)</option>
-                    <option value="Small Business (11–50 employees)">Small Business (11–50 employees)</option>
-                    <option value="Mid-size (51–200 employees)">Mid-size (51–200 employees)</option>
-                    <option value="Large Organization (200+)">Large Organization (200+)</option>
-                  </select>
+                  <label className="block text-gray-300 text-sm font-medium mb-3">What's your business size? *</label>
+                  <div className="space-y-2">
+                    {businessSizeOptions.map((size) => (
+                      <button
+                        key={size}
+                        onClick={() => handleChange('businessSize', size)}
+                        className={`w-full p-3 rounded-lg text-left transition ${
+                          formData.businessSize === size
+                            ? 'bg-[#6b9dc7] text-white border-2 border-blue-500'
+                            : 'bg-gray-700 text-gray-300 border-2 border-transparent hover:border-gray-600'
+                        }`}
+                      >
+                        <span className="text-sm font-medium">{size}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="flex gap-3 pt-2">
@@ -257,7 +360,7 @@ const handleSubmit = async () => {
                     disabled={!isStep2Valid()}
                     className={`flex-1 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${
                       isStep2Valid()
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        ? 'bg-[#6b9dc7] text-white hover:bg-[#5a8bb5]'
                         : 'bg-gray-700 text-gray-500 cursor-not-allowed'
                     }`}
                   >
@@ -276,18 +379,22 @@ const handleSubmit = async () => {
 
               <div className="space-y-5">
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">When would you like to start? *</label>
-                  <select
-                    value={formData.startTime}
-                    onChange={(e) => handleChange('startTime', e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500 transition cursor-pointer"
-                  >
-                    <option value="">Select timeline</option>
-                    <option value="Immediately">Immediately</option>
-                    <option value="Within the next 30 days">Within the next 30 days</option>
-                    <option value="Within 3 months">Within 3 months</option>
-                    <option value="Just exploring for now">Just exploring for now</option>
-                  </select>
+                  <label className="block text-gray-300 text-sm font-medium mb-3">When would you like to start? *</label>
+                  <div className="space-y-2">
+                    {startTimeOptions.map((time) => (
+                      <button
+                        key={time}
+                        onClick={() => handleChange('startTime', time)}
+                        className={`w-full p-3 rounded-lg text-left transition ${
+                          formData.startTime === time
+                            ? 'bg-[#6b9dc7] text-white border-2 border-blue-500'
+                            : 'bg-gray-700 text-gray-300 border-2 border-transparent hover:border-gray-600'
+                        }`}
+                      >
+                        <span className="text-sm font-medium">{time}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 <div>
@@ -297,7 +404,7 @@ const handleSubmit = async () => {
                       onClick={() => handleChange('consultationType', 'Free Discovery Call (15 mins)')}
                       className={`w-full p-4 rounded-lg text-left transition ${
                         formData.consultationType === 'Free Discovery Call (15 mins)'
-                          ? 'bg-blue-600 text-white border-2 border-blue-500'
+                          ? 'bg-[#6b9dc7] text-white border-2 border-blue-500'
                           : 'bg-gray-700 text-gray-300 border-2 border-transparent hover:border-gray-600'
                       }`}
                     >
@@ -314,7 +421,7 @@ const handleSubmit = async () => {
                       onClick={() => handleChange('consultationType', 'Full Strategy Session (60 mins, paid)')}
                       className={`w-full p-4 rounded-lg text-left transition ${
                         formData.consultationType === 'Full Strategy Session (60 mins, paid)'
-                          ? 'bg-blue-600 text-white border-2 border-blue-500'
+                          ? 'bg-[#6b9dc7] text-white border-2 border-blue-500'
                           : 'bg-gray-700 text-gray-300 border-2 border-transparent hover:border-gray-600'
                       }`}
                     >
@@ -335,6 +442,12 @@ const handleSubmit = async () => {
                   </p>
                 </div>
 
+                {submitError && (
+                  <div className="bg-red-900/30 border border-red-500 rounded-lg p-4">
+                    <p className="text-red-400 text-sm">{submitError}</p>
+                  </div>
+                )}
+
                 <div className="flex gap-3 pt-2">
                   <button
                     onClick={() => setStep(2)}
@@ -343,19 +456,20 @@ const handleSubmit = async () => {
                     <ArrowLeft size={18} /> Back
                   </button>
                   <button
-  onClick={handleSubmit}
-  disabled={!isStep3Valid() || isSubmitting}
-  className={`flex-1 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${
-    isStep3Valid() && !isSubmitting
-      ? 'bg-green-600 text-white hover:bg-green-700'
-      : 'bg-gray-700 text-gray-500 cursor-not-allowed'
-  }`}
->
-  {isSubmitting ? 'Submitting...' : 'Let\'s Get Started'} <Rocket size={18} />
-</button>
-{submitError && (
-  <p className="text-red-400 text-sm mt-2">{submitError}</p>
-)}
+                    onClick={() => {
+                      if (isStep3Valid()) {
+                        setShowConfirmation(true);
+                      }
+                    }}
+                    disabled={!isStep3Valid() || isSubmitting}
+                    className={`flex-1 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition ${
+                      isStep3Valid() && !isSubmitting
+                        ? 'bg-[#6b9dc7] text-white hover:bg-[#5a8bb5]'
+                        : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                    }`}
+                  >
+                    {isSubmitting ? 'Submitting...' : "Let's Get Started"} <Rocket size={18} />
+                  </button>
                 </div>
               </div>
             </div>
@@ -363,7 +477,7 @@ const handleSubmit = async () => {
         </div>
 
         {/* Security Badge */}
-        <div className="text-center mt-6">
+        <div className="text-center mt-6 mb-10">
           <p className="text-gray-500 text-sm">🔒 Your information is secure and confidential</p>
         </div>
       </div>

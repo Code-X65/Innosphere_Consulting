@@ -95,7 +95,7 @@ const ApproachCarousel = ({ approach }) => {
           >
             {/* Card */}
             <div className={`relative h-[420px] md:h-[460px] rounded-2xl overflow-hidden transition-all duration-500 ${
-              hoveredCard === index ? 'shadow-2xl shadow-cyan-500/30 scale-105' : 'shadow-xl'
+              hoveredCard === index ? 'shadow-2xl shadow-[#6b9dc7]/30 scale-105' : 'shadow-xl'
             }`}>
               {/* Background Image */}
               <div 
@@ -112,7 +112,7 @@ const ApproachCarousel = ({ approach }) => {
               }`} />
               
               {/* Animated Gradient Overlay - Visible on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-purple-600/20 transition-opacity duration-500 ${
+              <div className={`absolute inset-0 bg-gradient-to-br from-[#6b9dc7]/20 via-[#6b9dc7]/20 to-purple-600/20 transition-opacity duration-500 ${
                 hoveredCard === index ? 'opacity-100' : 'opacity-0'
               }`} />
               
@@ -120,7 +120,7 @@ const ApproachCarousel = ({ approach }) => {
               <div className="relative h-full flex flex-col justify-between p-6 md:p-8">
                 {/* Step Number Badge */}
                 <div>
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl shadow-lg">
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#6b9dc7] to-[#6b9dc7] rounded-xl shadow-lg">
                     <span className="text-white font-bold text-2xl">{item.id}</span>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const ApproachCarousel = ({ approach }) => {
                     : 'opacity-0 translate-y-8 pointer-events-none'
                 }`}>
                   <div>
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl shadow-lg mb-6">
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#6b9dc7] to-[#6b9dc7] rounded-xl shadow-lg mb-6">
                       <span className="text-white font-bold text-2xl">{item.id}</span>
                     </div>
                     
@@ -215,7 +215,7 @@ const SolutionDetail = () => {
   }
 
   return (
-    <div className="pt-35 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <div className="pt-35 bg-slate-950 text-white">
    {/* Hero Section - Split Layout */}
       <div className="relative  px-6 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto">
@@ -224,7 +224,7 @@ const SolutionDetail = () => {
             <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
               <div className="relative">
                 {/* Glowing background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-[#6b9dc7]/20 rounded-full blur-3xl"></div>
                 
                 {/* Tech illustration placeholder - you can replace with actual SVG */}
                 <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-3xl  border border-slate-700/50">
@@ -254,14 +254,14 @@ const SolutionDetail = () => {
         <div className={` transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
           <div className="mb-6 md:mb-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-1 w-12 bg-gradient-to-r from-cyan-500 to-blue-600"></div>
+              <div className="h-1 w-12 bg-gradient-to-r from-[#6b9dc7] to-[#6b9dc7]"></div>
               <span className="text-cyan-400 font-semibold uppercase tracking-wider text-sm">
                 Our Methodology
               </span>
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              OUR <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">APPROACH</span>
+              OUR <span className="bg-gradient-to-r from-[#6b9dc7] to-[#6b9dc7] bg-clip-text text-transparent">APPROACH</span>
             </h2>
 
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl">
@@ -289,7 +289,7 @@ const SolutionDetail = () => {
                onClick={() => {
                  trackCTAConversion('Get Started', 'Homepage Hero');
                }} 
-               className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50 flex gap-2 items-center justify-center mx-auto"
+               className="bg-gradient-to-r from-[#6b9dc7] to-[#6b9dc7] hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#6b9dc7]/50 flex gap-2 items-center justify-center mx-auto"
              >
               Book A free consultation <ArrowRight />
             </button>

@@ -13,55 +13,55 @@ const InnosphereAbout = () => {
       type: "RESEARCH REPORT",
       title: "Destination net zero 2025",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95"
+      color: "bg-slate-900/95"
     },
     {
       type: "RESEARCH REPORT",
       title: "Sovereign AI: From managing risk to accelerating growth",
       description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
       image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95"
+      color: "bg-slate-900/95"
     },
     {
       type: "RESEARCH REPORT",
       title: "Holiday Shopping 2025: Tis the season for smarter spending and personalized joy",
       image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95",
+      color: "bg-slate-900/95",
        description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
     },
     {
       type: "CASE STUDY",
       title: "Poste Italiane pivots from postal service to national platform",
       image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95",
+      color: "bg-slate-900/95",
        description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
     },
     {
       type: "RESEARCH REPORT",
       title: "Learning, reinvented. Accelerating human-AI collaboration",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95",
+      color: "bg-slate-900/95",
        description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
     },
     {
       type: "CASE STUDY",
       title: "Bristol Myers Squibb accelerates drug development with generative AI",
       image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95",
+      color: "bg-slate-900/95",
        description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
     },
     {
       type: "RESEARCH REPORT",
       title: "4 critical actions to take now to strengthen your cyber defenses",
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95",
+      color: "bg-slate-900/95",
        description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
     },
     {
       type: "RESEARCH REPORT",
       title: "AI and your operating model: Radically new ways of working",
       image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop",
-      color: "bg-[#0a1929]/95",
+      color: "bg-slate-900/95",
        description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
     }
   ];
@@ -126,7 +126,7 @@ const InnosphereAbout = () => {
           </div>
           
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-            Our <span className="bg-gradient-to-r from-[#0a1929] via-white to-[#0a1929]/ bg-clip-text text-transparent">Research</span> & <span className="bg-gradient-to-r from-[#0a1929] via-white to-[#0a1929]/50 bg-clip-text text-transparent">Insights</span>
+            Our <span className="bg-gradient-to-r from-slate-900 via-white to-slate-900/ bg-clip-text text-transparent">Research</span> & <span className="bg-gradient-to-r from-slate-900 via-white to-slate-900/50 bg-clip-text text-transparent">Insights</span>
           </h2>
 
           <p className="text-base md:text-xl text-gray-300 leading-relaxed max-w-3xl">
@@ -220,7 +220,7 @@ const InnosphereAbout = () => {
                 </div>
 
                 {/* Animated Border on Hover */}
-                <div className={`absolute inset-0 rounded-2xl border-2 border-cyan-400 transition-opacity duration-500 ${
+                <div className={`absolute inset-0 rounded-2xl  transition-opacity duration-500 ${
                   hoveredCard === index ? 'opacity-100' : 'opacity-0'
                 }`} />
               </div>

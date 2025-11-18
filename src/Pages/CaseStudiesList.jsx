@@ -76,12 +76,12 @@ const CaseStudiesList = () => {
             {/* Right - Content */}
             <div className="order-1 lg:order-2">
               <div className="inline-block mb-6">
-                <span className="text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 px-4 py-2 rounded-full border border-blue-700/50">
+                <span className="text-sm font-semibold tracking-wider text-[#6b9dc7] uppercase bg-[#6b9dc7]/30 px-4 py-2 rounded-full border border-blue-700/50">
                   Our Work
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Case Studies: <span className="text-blue-400">Proven Results</span>
+                Case Studies: <span className="text-[#6b9dc7]">Proven Results</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl">
                 Explore real-world transformations delivered for clients across Nigeria and West Africa. Each case study demonstrates our commitment to delivering measurable business outcomes.
@@ -108,7 +108,7 @@ const CaseStudiesList = () => {
               <div
                 key={study.id}
                 ref={el => cardsRef.current[index] = el}
-                className=" rounded-2xl overflow-hidden  hover:shadow-xl hover:shadow-blue-900/20 transition-all duration-300 cursor-pointer group"
+                className=" rounded-2xl overflow-hidden  hover:shadow-xl hover:shadow-[#6b9dc7]/20 transition-all duration-300 cursor-pointer group"
                 onClick={() => handleCaseClick(study.slug)}
               >
                 {/* Image */}
@@ -121,7 +121,7 @@ const CaseStudiesList = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
                 
                   <div className="absolute bottom-6 left-6">
-                    <span className="inline-block bg-gray-900/90 backdrop-blur-sm text-blue-400 px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">
+                    <span className="inline-block bg-gray-900/90 backdrop-blur-sm text-[#6b9dc7] px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">
                       {study.category}
                     </span>
                   </div>
@@ -136,7 +136,7 @@ const CaseStudiesList = () => {
                     {study.excerpt}
                   </p>
 
-                  <button className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors group/btn">
+                  <button className="inline-flex items-center text-[#6b9dc7] font-semibold hover:text-[#6b9dc7] transition-colors group/btn">
                     <span>Read Full Story</span>
                     <ArrowRight size={18} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
@@ -150,7 +150,7 @@ const CaseStudiesList = () => {
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-900/30 hover:shadow-blue-900/50"
+                className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-[#6b9dc7]/30 hover:shadow-[#6b9dc7]/50"
               >
                 <span>{showAll ? 'Show Less' : 'Show More Case Studies'}</span>
                 <ArrowRight 
@@ -177,7 +177,7 @@ const CaseStudiesList = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/30"
+                className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-[#6b9dc7]/30"
               >
                 <span>Schedule Consultation</span>
                 <ArrowRight className="ml-2" size={20} />

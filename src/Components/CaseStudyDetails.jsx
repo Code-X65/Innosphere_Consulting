@@ -16,7 +16,7 @@ const CaseStudyDetails = () => {
   // Get related cases from same category
   const relatedCases = Object.entries(caseStudiesData)
     .filter(([key, value]) => key !== slug && value.category === currentCase?.category)
-    .slice(0, 2)
+    .slice(0, 3)
     .map(([key, value]) => ({ slug: key, ...value }));
 
   // Fill with other cases if needed
@@ -89,7 +89,7 @@ const CaseStudyDetails = () => {
           <h1 className="text-4xl font-bold text-white mb-6">Case Study Not Found</h1>
           <button
             onClick={() => navigate('/cases')}
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+            className="inline-flex items-center text-[#6b9dc7] hover:text-[#6b9dc7] font-semibold transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
             Back to Case Studies
@@ -100,9 +100,9 @@ const CaseStudyDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className=" bg-slate-950">
       {/* Hero Section - Mobile with background image */}
-      <div className="relative py-20">
+      <div className="relative pt-20 pb-10">
         {/* Mobile Background Image */}
         <div className="md:hidden absolute inset-0 h-[500px]">
           <img
@@ -116,7 +116,7 @@ const CaseStudyDetails = () => {
         <div ref={heroRef} className="container mx-auto px-6 py-12 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative z-10">
-              <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded text-sm font-semibold mb-6">
+              <span className="inline-block bg-[#6b9dc7] text-white px-4 py-2 rounded text-sm font-semibold mb-6">
                 {currentCase.category}
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -128,11 +128,11 @@ const CaseStudyDetails = () => {
               
               <div className="grid grid-cols-2 gap-6 bg-gray-900/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-4 md:p-0 rounded-lg">
                 <div>
-                  <p className="text-blue-400 font-semibold text-sm mb-2 uppercase tracking-wider">Client</p>
+                  <p className="text-[#6b9dc7] font-semibold text-sm mb-2 uppercase tracking-wider">Client</p>
                   <p className="text-white font-medium">{currentCase.client}</p>
                 </div>
                 <div>
-                  <p className="text-blue-400 font-semibold text-sm mb-2 uppercase tracking-wider">Duration</p>
+                  <p className="text-[#6b9dc7] font-semibold text-sm mb-2 uppercase tracking-wider">Duration</p>
                   <p className="text-white font-medium">{currentCase.duration}</p>
                 </div>
               </div>
@@ -150,19 +150,19 @@ const CaseStudyDetails = () => {
       </div>
 
       {/* Content Sections - New Format */}
-      <div ref={contentRef} className="bg-gray-900 py-16 md:py-20">
+      <div ref={contentRef} className=" py-4 ">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             
             {/* Challenge */}
             <div className="mb-16">
               <div className="flex items-start mb-6">
-                <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center border border-blue-600/30 mr-4 flex-shrink-0">
-                  <div className="w-6 h-6 bg-blue-600 rounded"></div>
+                <div className="w-12 h-12 bg-[#6b9dc7]/10 rounded-lg flex items-center justify-center border border-[#6b9dc7]/30 mr-4 flex-shrink-0">
+                  <div className="w-6 h-6 bg-[#6b9dc7] rounded"></div>
                 </div>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">The Challenge</h2>
-                  <div className="w-16 h-0.5 bg-blue-500"></div>
+                  <div className="w-16 h-0.5 bg-[#6b9dc7]"></div>
                 </div>
               </div>
               <div className="ml-0 md:ml-16">
@@ -175,12 +175,12 @@ const CaseStudyDetails = () => {
             {/* Approach */}
             <div className="mb-16">
               <div className="flex items-start mb-6">
-                <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center border border-blue-600/30 mr-4 flex-shrink-0">
-                  <div className="w-6 h-6 bg-blue-600 rounded"></div>
+                <div className="w-12 h-12 bg-[#6b9dc7]/10 rounded-lg flex items-center justify-center border border-[#6b9dc7]/30 mr-4 flex-shrink-0">
+                  <div className="w-6 h-6 bg-[#6b9dc7] rounded"></div>
                 </div>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Our Approach</h2>
-                  <div className="w-16 h-0.5 bg-blue-500"></div>
+                  <div className="w-16 h-0.5 bg-[#6b9dc7]"></div>
                 </div>
               </div>
               <div className="ml-0 md:ml-16">
@@ -193,12 +193,12 @@ const CaseStudyDetails = () => {
             {/* Result */}
             <div className="mb-16">
               <div className="flex items-start mb-6">
-                <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center border border-blue-600/30 mr-4 flex-shrink-0">
-                  <div className="w-6 h-6 bg-blue-600 rounded"></div>
+                <div className="w-12 h-12 bg-[#6b9dc7]/10 rounded-lg flex items-center justify-center border border-[#6b9dc7]/30 mr-4 flex-shrink-0">
+                  <div className="w-6 h-6 bg-[#6b9dc7] rounded"></div>
                 </div>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">The Result</h2>
-                  <div className="w-16 h-0.5 bg-blue-500"></div>
+                  <div className="w-16 h-0.5 bg-[#6b9dc7]"></div>
                 </div>
               </div>
               <div className="ml-0 md:ml-16">
@@ -211,19 +211,19 @@ const CaseStudyDetails = () => {
             {/* Impact Metrics */}
             <div className="mb-16">
               <div className="flex items-start mb-6">
-                <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center border border-blue-600/30 mr-4 flex-shrink-0">
-                  <div className="w-6 h-6 bg-blue-600 rounded"></div>
+                <div className="w-12 h-12 bg-[#6b9dc7]/10 rounded-lg flex items-center justify-center border border-[#6b9dc7]/30 mr-4 flex-shrink-0">
+                  <div className="w-6 h-6 bg-[#6b9dc7] rounded"></div>
                 </div>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Impact Metrics</h2>
-                  <div className="w-16 h-0.5 bg-blue-500"></div>
+                  <div className="w-16 h-0.5 bg-[#6b9dc7]"></div>
                 </div>
               </div>
               <div className="ml-0 md:ml-16">
                 <div className="grid md:grid-cols-2 gap-6">
                   {currentCase.details.impactMetrics && currentCase.details.impactMetrics.map((metric, index) => (
                     <div key={index} className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
-                      <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
+                      <div className="text-3xl md:text-4xl font-bold text-[#6b9dc7] mb-2">
                         {metric.value}
                       </div>
                       <p className="text-gray-300 text-sm md:text-base">
@@ -239,18 +239,18 @@ const CaseStudyDetails = () => {
       </div>
 
       {/* Related Case Studies */}
-      <div className="bg-gray-950 py-16 md:py-20 border-t border-gray-800">
-        <div className="container mx-auto px-6">
+      <div className=" py-4 ">
+        <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Related Case Studies</h2>
           <p className="text-gray-400 mb-12">Explore more success stories from our portfolio</p>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2  gap-8">
             {relatedCases.map((study, index) => (
               <div
                 key={study.slug}
                 ref={el => relatedRef.current[index] = el}
                 onClick={() => navigate(`/cases/${study.slug}`)}
-                className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-600 cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/20"
+                className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-[#6b9dc7] cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-[#6b9dc7]/20"
               >
                 <div className="relative overflow-hidden h-56">
                   <img
@@ -259,19 +259,19 @@ const CaseStudyDetails = () => {
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
-                  <span className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded text-xs font-semibold">
+                  <span className="absolute top-4 left-4 bg-[#6b9dc7] text-white px-3 py-1 rounded text-xs font-semibold">
                     {study.category}
                   </span>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#6b9dc7] transition-colors">
                     {study.title}
                   </h3>
                   <p className="text-gray-400 mb-4 line-clamp-2">
                     {study.overview}
                   </p>
-                  <div className="flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors group/btn text-sm">
+                  <div className="flex items-center text-[#6b9dc7] font-semibold hover:text-[#6b9dc7] transition-colors group/btn text-sm">
                     <span className="mr-2">Read Case Study</span>
                     <ChevronRight className="transform group-hover/btn:translate-x-1 transition-transform" size={18} />
                   </div>
@@ -283,7 +283,7 @@ const CaseStudyDetails = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gray-900 border-t border-gray-800">
+      <div className="">
         <div className="container mx-auto px-6 py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -294,7 +294,7 @@ const CaseStudyDetails = () => {
             </p>
             <button 
               onClick={() => handleNavigation('/consultation')}
-              className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/30"
+              className="inline-flex items-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6b9dc7] transition-colors shadow-lg shadow-[#6b9dc7]/30 cursor-pointer"
             >
               <span>Schedule a Consultation</span>
               <ChevronRight className="ml-2" size={20} />

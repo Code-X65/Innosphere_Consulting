@@ -103,7 +103,7 @@ const Navbar = () => {
             <Link 
               to="/industries" 
               className={`transition-colors text-sm font-medium tracking-wide ${
-                isActive('/Industries') ? 'text-[#6b9dc7]' : 'text-gray-300 hover:text-[#a8c5e0]'
+                isActive('/industries') ? 'text-[#6b9dc7]' : 'text-gray-300 hover:text-[#a8c5e0]'
               }`}
             >
               INDUSTRIES
@@ -140,7 +140,7 @@ const Navbar = () => {
 
             <Link 
               to="/contact" 
-              className={`transition-colors text-sm font-medium tracking-wide bg-blue-500 px-6 py-3 hover:bg-blue-700 rounded-full text-white hidden md:block`}
+              className={`transition-colors text-sm font-medium tracking-wide bg-[#6b9dc7] px-6 py-3 hover:bg-blue-700 rounded-full text-white hidden md:block`}
             >
               CONTACT US
             </Link>

@@ -183,12 +183,12 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
             {/* Right - Content */}
             <div className="order-1 lg:order-2">
               <div className="inline-block mb-6">
-                <span className="text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 px-4 py-2 rounded-full border border-blue-700/50">
+                <span className="text-sm font-semibold tracking-wider text-[#6b9dc7] uppercase bg-[#6b9dc7]/30 px-4 py-2 rounded-full border border-[#6b9dc7]/50">
                   Industry Expertise
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Transforming Industries Across <span className="text-blue-400">Nigeria & West Africa</span>
+                Transforming Industries Across <span className="text-[#6b9dc7]">Nigeria & West Africa</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl">
                 We serve clients across multiple sectors in Nigeria and the West African region, each with distinct growth and transformation needs. Our deep industry knowledge combined with technical expertise delivers measurable results.
@@ -243,8 +243,8 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
                       />
                       <div className="absolute inset-0 "></div>
                       <div className="absolute top-6 left-6">
-                        <div className="bg-blue-900/80 backdrop-blur-sm w-14 h-14 rounded-xl flex items-center justify-center">
-                          <industry.icon className="text-blue-400" size={28} />
+                        <div className="bg-[#6b9dc7]/80 backdrop-blur-sm w-14 h-14 rounded-xl flex items-center justify-center">
+                          <industry.icon className="text-[#6b9dc7]" size={28} />
                         </div>
                       </div>
                     </div>
@@ -254,14 +254,14 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
                       <h3 className="text-2xl font-bold text-white mb-2">
                         {industry.name}
                       </h3>
-                      <p className="text-blue-400 text-xs font-semibold mb-4 uppercase tracking-wide">
+                      <p className="text-[#6b9dc7] text-xs font-semibold mb-4 uppercase tracking-wide">
                         {industry.tagline}
                       </p>
                       <p className="text-gray-300 text-sm leading-relaxed mb-6">
                         {industry.description}
                       </p>
 
-                      <button className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors group">
+                      <button className="inline-flex items-center text-[#6b9dc7] font-semibold hover:text-[#6b9dc7] transition-colors group">
                         <span>Learn More</span>
                         <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                       </button>
@@ -280,7 +280,7 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
                     <div className="p-6 h-full overflow-y-auto">
                       {/* Back Button */}
                       <button 
-                        className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors mb-4"
+                        className="inline-flex items-center text-[#6b9dc7] font-semibold hover:text-[#6b9dc7] transition-colors mb-4"
                         onClick={(e) => {
                           e.stopPropagation();
                           setFlippedCard(null);
@@ -291,20 +291,20 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
                       </button>
 
                       <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <industry.icon className="text-blue-400" size={24} />
+                        <industry.icon className="text-[#6b9dc7]" size={24} />
                         {industry.name}
                       </h3>
 
                       {/* Capabilities */}
                       <div className="mb-6">
                         <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                          <Building2 size={18} className="text-blue-400" />
+                          <Building2 size={18} className="text-[#6b9dc7]" />
                           Our Capabilities
                         </h4>
                         <ul className="space-y-2">
                           {industry.capabilities.map((capability, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
-                              <CheckCircle className="text-blue-400 flex-shrink-0 mt-0.5" size={14} />
+                              <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-0.5" size={14} />
                               <span>{capability}</span>
                             </li>
                           ))}
@@ -314,7 +314,7 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
                       {/* Outcomes */}
                       <div>
                         <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                          <TrendingUp size={18} className="text-blue-400" />
+                          <TrendingUp size={18} className="text-[#6b9dc7]" />
                           Typical Outcomes
                         </h4>
                         <ul className="space-y-2">
@@ -337,7 +337,7 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-900/30 hover:shadow-blue-900/50"
+                className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6b9dc7] transition-all duration-300 shadow-lg shadow-[#6b9dc7]/30 hover:shadow-[#6b9dc7]/50"
               >
                 <span>{showAll ? 'Show Less' : 'Show More Industries'}</span>
                 <ArrowRight 
@@ -366,28 +366,28 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Local Expertise, Global Standards</div>
                       <div className="text-gray-400 text-sm">Deep understanding of Nigerian market dynamics with international best practices</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Proven Track Record</div>
                       <div className="text-gray-400 text-sm">100+ successful projects across multiple industries in Lagos, Abuja, and Port Harcourt</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">End-to-End Partnership</div>
                       <div className="text-gray-400 text-sm">From strategy to implementation and beyond, we're with you every step of the way</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Results-Driven Approach</div>
                       <div className="text-gray-400 text-sm">Focus on measurable outcomes that impact your bottom line</div>
@@ -396,20 +396,20 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
                 </ul>
               </div>
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">95%</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">95%</div>
                   <div className="text-gray-300 text-sm">Client Retention Rate</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">100+</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">100+</div>
                   <div className="text-gray-300 text-sm">Projects Delivered</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">15+</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">15+</div>
                   <div className="text-gray-300 text-sm">Years Combined Experience</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">50+</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">50+</div>
                   <div className="text-gray-300 text-sm">Enterprise Clients</div>
                 </div>
               </div>
@@ -430,7 +430,7 @@ const displayedIndustries = showAll ? industries : industries.slice(0, 3);
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/consultation" >  <button 
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/30"
+                className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6b9dc7] transition-colors shadow-lg shadow-[#6b9dc7]/30"
               >
                 <span>Schedule Consultation</span>
                 <ArrowRight className="ml-2" size={20} />

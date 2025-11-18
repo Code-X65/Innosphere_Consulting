@@ -128,11 +128,11 @@ const AboutUs = () => {
 
   <p className="text-gray-300 leading-relaxed">
     Our multidisciplinary approach  covering 
-    <span className="text-cyan-400 font-semibold"> digital transformation</span>, 
-    <span className="text-cyan-400 font-semibold"> cyber security</span>, 
-    <span className="text-cyan-400 font-semibold"> marketing</span>, 
-    <span className="text-cyan-400 font-semibold"> management consulting</span>, and 
-    <span className="text-cyan-400 font-semibold"> software innovation</span>  ensures clients not only meet today’s challenges but also align with 
+    <span className="text-[#6b9dc7] font-semibold"> digital transformation</span>, 
+    <span className="text-[#6b9dc7] font-semibold"> cyber security</span>, 
+    <span className="text-[#6b9dc7] font-semibold"> marketing</span>, 
+    <span className="text-[#6b9dc7] font-semibold"> management consulting</span>, and 
+    <span className="text-[#6b9dc7] font-semibold"> software innovation</span>  ensures clients not only meet today’s challenges but also align with 
     <span className="text-white font-semibold"> Dubai D33</span>, 
     <span className="text-white font-semibold"> UAE AI Strategy 2031</span>, and the 
     <span className="text-white font-semibold"> Digital Government Strategy 2025</span>.
@@ -152,7 +152,7 @@ const AboutUs = () => {
     >
       <p className="text-gray-300 leading-relaxed mb-6 whitespace-pre-line">
         {displayedText}
-        <span className="border-r-2 border-cyan-400 animate-pulse ml-1"></span>
+        <span className="border-r-2 border-[#6b9dc7] animate-pulse ml-1"></span>
       </p>
     </div>
           </div>

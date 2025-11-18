@@ -79,12 +79,12 @@ const InsightsList = () => {
             {/* Right - Content */}
             <div className="order-1 lg:order-2">
               <div className="inline-block mb-6">
-                <span className="text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 px-4 py-2 rounded-full border border-blue-700/50">
+                <span className="text-sm font-semibold tracking-wider text-[#6b9dc7] uppercase bg-[#6b9dc7]/30 px-4 py-2 rounded-full border border-[#6b9dc7]/50">
                   Knowledge Hub
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight">
-                Insights & <span className="text-blue-400">Thought Leadership</span>
+                Insights & <span className="text-[#6b9dc7]">Thought Leadership</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl">
                 Expert perspectives on the latest trends, strategies, and innovations shaping the future of business transformation across Nigeria and West Africa.
@@ -111,7 +111,7 @@ const InsightsList = () => {
               <div
                 key={insight.id}
                 ref={el => cardsRef.current[index] = el}
-                className="  overflow-hidden hover:shadow-xl hover:shadow-blue-900/20 transition-all duration-300 cursor-pointer group flex flex-col"
+                className="  overflow-hidden hover:shadow-xl hover:shadow-[#6b9dc7]/20 transition-all duration-300 cursor-pointer group flex flex-col"
                 onClick={() => handleInsightClick(insight.slug)}
               >
                 {/* Image */}
@@ -130,7 +130,7 @@ const InsightsList = () => {
                     </div>
                   )}
                   <div className="absolute bottom-6 left-6">
-                    <span className="inline-block bg-gray-900/90 backdrop-blur-sm text-blue-400 px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">
+                    <span className="inline-block bg-gray-900/90 backdrop-blur-sm text-[#6b9dc7] px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">
                       {insight.category}
                     </span>
                   </div>
@@ -158,7 +158,7 @@ const InsightsList = () => {
                     </div>
                   </div>
 
-                  <button className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors group/btn">
+                  <button className="inline-flex items-center text-[#6b9dc7] font-semibold hover:text-[#6b9dc7] transition-colors group/btn">
                     <span>Read More</span>
                     <ArrowRight size={18} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
@@ -172,7 +172,7 @@ const InsightsList = () => {
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-900/30 hover:shadow-blue-900/50"
+                className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6b9dc7] transition-all duration-300 shadow-lg shadow-[#6b9dc7]/30 hover:shadow-[#6b9dc7]/50"
               >
                 <span>{showAll ? 'Show Less' : 'Show More Insights'}</span>
                 <ArrowRight 
@@ -199,28 +199,28 @@ const InsightsList = () => {
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Practical Expertise</div>
                       <div className="text-gray-400 text-sm">Real-world insights from 100+ consulting projects across Africa</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Industry-Specific Content</div>
                       <div className="text-gray-400 text-sm">Tailored perspectives on financial services, healthcare, energy, and more</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Local & Global Perspectives</div>
                       <div className="text-gray-400 text-sm">Bridging Nigerian market dynamics with international best practices</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Actionable Strategies</div>
                       <div className="text-gray-400 text-sm">Frameworks and approaches you can implement immediately</div>
@@ -229,20 +229,20 @@ const InsightsList = () => {
                 </ul>
               </div>
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">50+</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">50+</div>
                   <div className="text-gray-300 text-sm">Published Articles</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">10K+</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">10K+</div>
                   <div className="text-gray-300 text-sm">Monthly Readers</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">15+</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">15+</div>
                   <div className="text-gray-300 text-sm">Industry Topics</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">3×</div>
+                <div className="bg-[#6b9dc7]/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">3×</div>
                   <div className="text-gray-300 text-sm">Weekly Updates</div>
                 </div>
               </div>
@@ -255,8 +255,8 @@ const InsightsList = () => {
       <div className="">
         <div className="container mx-auto px-6 py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600/20 border border-blue-500/30 rounded-2xl mb-6">
-              <BookOpen className="text-blue-400" size={32} />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#6b9dc7]/20 border border-[#6b9dc7]/30 rounded-2xl mb-6">
+              <BookOpen className="text-[#6b9dc7]" size={32} />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Never Miss an Insight
@@ -279,18 +279,18 @@ const InsightsList = () => {
                   name="email"
                   required
                   placeholder="Enter your email address"
-                  className="flex-1 px-6 py-4 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                  className="flex-1 px-6 py-4 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#6b9dc7] focus:ring-2 focus:ring-[#6b9dc7]/20 transition-all"
                 />
                 <button 
                   type="submit"
-                  className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/30 whitespace-nowrap"
+                  className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6b9dc7] transition-colors shadow-lg shadow-[#6b9dc7]/30 whitespace-nowrap"
                 >
                   <span>Subscribe</span>
                   <ArrowRight className="ml-2" size={20} />
                 </button>
               </div>
               <p className="text-gray-500 text-sm mt-4">
-                Join 5,000+ professionals staying ahead of the curve
+                Join over 100 professionals staying ahead of the curve
               </p>
             </form>
           </div>

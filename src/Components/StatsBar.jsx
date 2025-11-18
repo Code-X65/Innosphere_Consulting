@@ -70,7 +70,7 @@ const StatsBar = () => {
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-[#4a7ba7]/10 blur-xl group-hover:bg-[#4a7ba7]/20 transition-all duration-300"></div>
-                <div className="relative bg-[#0a1929]/50 backdrop-blur-sm border border-[#1e3a5f]/50 rounded-2xl p-8 hover:border-[#4a7ba7]/50 transition-all duration-300">
+                <div className="relative bg-slate-950/50 backdrop-blur-sm border border-[#1e3a5f]/50 rounded-2xl p-8 hover:border-[#4a7ba7]/50 transition-all duration-300 cursor-pointer">
                   <div className="flex items-center justify-center mb-2">
                     <span 
                       className="stat-number text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#6b9dc7] to-[#a8c5e0] bg-clip-text text-transparent"

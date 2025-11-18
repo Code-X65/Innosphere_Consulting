@@ -230,12 +230,12 @@ const Academy = () => {
             {/* Right - Content */}
             <div className="order-1 lg:order-2">
               <div className="inline-block mb-6">
-                <span className="text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 px-4 py-2 rounded-full border border-blue-700/50">
+                <span className="text-sm font-semibold tracking-wider text-[#6b9dc7] uppercase bg-blue-900/30 px-4 py-2 rounded-full border border-[#6b9dc7]/50">
                   Capability Academy
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Empower Your Future with <span className="text-blue-400">Professional Training</span>
+                Empower Your Future with <span className="text-[#6b9dc7]">Professional Training</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl">
                 Our Capability Academy empowers professionals and organizations across Nigeria to build the skills needed to thrive in a digital economy. Elevate your career with industry-leading programs.
@@ -260,10 +260,10 @@ const Academy = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index}
-                className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-blue-600 transition-all duration-300"
+                className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-[#6b9dc7] transition-all duration-300"
               >
                 <div className="bg-blue-900/30 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <benefit.icon className="text-blue-400" size={28} />
+                  <benefit.icon className="text-[#6b9dc7]" size={28} />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
@@ -319,7 +319,7 @@ const Academy = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent"></div>
                       <div className="absolute top-6 left-6">
                         <div className="bg-blue-900/80 backdrop-blur-sm w-14 h-14 rounded-xl flex items-center justify-center">
-                          <program.icon className="text-blue-400" size={28} />
+                          <program.icon className="text-[#6b9dc7]" size={28} />
                         </div>
                       </div>
                       <div className="absolute top-6 right-6">
@@ -334,7 +334,7 @@ const Academy = () => {
                       <h3 className="text-2xl font-bold text-white mb-2">
                         {program.title}
                       </h3>
-                      <p className="text-blue-400 text-xs font-semibold mb-4 uppercase tracking-wide">
+                      <p className="text-[#6b9dc7] text-xs font-semibold mb-4 uppercase tracking-wide">
                         {program.subtitle}
                       </p>
                       <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -344,7 +344,7 @@ const Academy = () => {
                         {program.level}
                       </div>
 
-                      {/* <button className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors group">
+                      {/* <button className="inline-flex items-center text-[#6b9dc7] font-semibold hover:text-blue-300 transition-colors group">
                         <span>View Details</span>
                         <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                       </button> */}
@@ -363,7 +363,7 @@ const Academy = () => {
                     <div className="p-6 h-full overflow-y-auto">
                       {/* Back Button */}
                       <button 
-                        className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors mb-4"
+                        className="inline-flex items-center text-[#6b9dc7] font-semibold hover:text-blue-300 transition-colors mb-4"
                         onClick={(e) => {
                           e.stopPropagation();
                           setFlippedCard(null);
@@ -374,20 +374,20 @@ const Academy = () => {
                       </button>
 
                       <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <program.icon className="text-blue-400" size={24} />
+                        <program.icon className="text-[#6b9dc7]" size={24} />
                         {program.title}
                       </h3>
 
                       {/* Features */}
                       <div className="mb-6">
                         <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                          <Building2 size={18} className="text-blue-400" />
+                          <Building2 size={18} className="text-[#6b9dc7]" />
                           What You'll Learn
                         </h4>
                         <ul className="space-y-2">
                           {program.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
-                              <CheckCircle className="text-blue-400 flex-shrink-0 mt-0.5" size={14} />
+                              <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-0.5" size={14} />
                               <span>{feature}</span>
                             </li>
                           ))}
@@ -397,7 +397,7 @@ const Academy = () => {
                       {/* Outcomes */}
                       <div>
                         <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                          <TrendingUp size={18} className="text-blue-400" />
+                          <TrendingUp size={18} className="text-[#6b9dc7]" />
                           Program Outcomes
                         </h4>
                         <ul className="space-y-2">
@@ -421,7 +421,7 @@ const Academy = () => {
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-900/30 hover:shadow-blue-900/50"
+                className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6b9dc7] transition-all duration-300 shadow-lg shadow-blue-900/30 hover:shadow-blue-900/50"
               >
                 <span>{showAll ? 'Show Less' : 'Show More Programs'}</span>
                 <ArrowRight 
@@ -448,28 +448,28 @@ const Academy = () => {
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Expert Instructors</div>
                       <div className="text-gray-400 text-sm">Learn from seasoned professionals with years of practical industry experience</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Hands-On Learning</div>
                       <div className="text-gray-400 text-sm">Apply concepts immediately through real-world projects and case studies</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Flexible Delivery</div>
                       <div className="text-gray-400 text-sm">Choose from on-site, remote, or hybrid learning options to fit your schedule</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-[#6b9dc7] flex-shrink-0 mt-1" size={20} />
                     <div>
                       <div className="text-white font-semibold mb-1">Career Advancement</div>
                       <div className="text-gray-400 text-sm">Earn industry-recognized certifications that accelerate your professional growth</div>
@@ -478,20 +478,20 @@ const Academy = () => {
                 </ul>
               </div>
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">500+</div>
+                <div className="bg-blue-900/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">500+</div>
                   <div className="text-gray-300 text-sm">Professionals Trained</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">50+</div>
+                <div className="bg-blue-900/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">50+</div>
                   <div className="text-gray-300 text-sm">Corporate Clients</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">95%</div>
+                <div className="bg-blue-900/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">95%</div>
                   <div className="text-gray-300 text-sm">Satisfaction Rate</div>
                 </div>
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">6</div>
+                <div className="bg-blue-900/20 border border-[#6b9dc7]/50 rounded-xl p-6">
+                  <div className="text-4xl font-bold text-[#6b9dc7] mb-2">6</div>
                   <div className="text-gray-300 text-sm">Programs Offered</div>
                 </div>
               </div>
@@ -512,7 +512,7 @@ const Academy = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/30"
+                className="inline-flex items-center justify-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6b9dc7] transition-colors shadow-lg shadow-blue-900/30"
               >
                 <span>Enroll Now</span>
                 <ArrowRight className="ml-2" size={20} />

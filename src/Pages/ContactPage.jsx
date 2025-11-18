@@ -91,9 +91,9 @@ useEffect(() => {
         </div>
 
         {/* Contact Form and Info */}
-        <div className="max-w-6xl mx-auto bg-gray-800/50 backdrop-blur-sm rounded-3xl p-12 shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Left Side - Contact Info */}
+        <div className="max-w-5xl mx-auto bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 md:p-12 shadow-2xl">
+          <div className=" gap-12">
+            {/* Left Side - Contact Info
             <div>
               <h2 className="text-4xl font-bold text-white mb-6">Let's talk!</h2>
               
@@ -131,6 +131,12 @@ useEffect(() => {
                   </div>
                 </div>
               </div>
+            </div> */}
+
+            <div>
+              <h2 className="text-4xl font-bold text-white mb-6">Let's talk!</h2>
+              
+            
             </div>
 
             {/* Right Side - Form */}
@@ -230,14 +236,14 @@ useEffect(() => {
               <button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full py-4 bg-[#6b9dc7] text-white font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 {isSubmitting ? 'Sending...' : 'Get in touch'}
               </button>
 
               {/* Success Message */}
               {submitSuccess && (
-                <div className="p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-400 text-center">
+                <div className="p-4 bg-[#6b9dc7]/20 border border-[#6b9dc7] rounded-lg text-[#6b9dc7] text-center">
                   ✓ Message sent successfully! We'll get back to you soon.
                 </div>
               )}

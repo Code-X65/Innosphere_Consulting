@@ -187,7 +187,7 @@ const sections = [
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                       activeIndex === index
-                        ? 'bg-blue-500 rotate-180'
+                        ? 'bg-[#6b9dc7] rotate-180'
                         : 'bg-gray-800 group-hover:bg-gray-700'
                     }`}
                   >

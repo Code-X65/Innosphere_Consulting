@@ -84,7 +84,7 @@ const InsightDetails = () => {
        
 
           <div className="max-w-7xl mx-auto pt-10">
-            <span className="inline-block text-blue-400 text-sm font-semibold tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#6b9dc7] text-sm font-semibold tracking-wider uppercase mb-4">
               {article.category}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -162,7 +162,7 @@ const InsightDetails = () => {
                 <h3 className="text-2xl font-bold text-white mb-8">About the Author</h3>
                 <div className="bg-gray-900 rounded-lg p-6">
                   <div className="flex items-start gap-6">
-                    <div className="w-20 h-20 rounded-full bg-blue-600 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-[#6b9dc7] flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
                       {article.author.name.charAt(0)}
                     </div>
                     <div>
@@ -197,7 +197,7 @@ const InsightDetails = () => {
                     </button>
                     <button
                       onClick={() => handleShare('twitter')}
-                      className="flex-1 bg-blue-400 hover:bg-blue-500 text-white p-3 rounded-lg transition-colors"
+                      className="flex-1 bg-[#6b9dc7] hover:bg-blue-500 text-white p-3 rounded-lg transition-colors"
                       aria-label="Share on Twitter"
                     >
                       <Twitter size={20} className="mx-auto" />
@@ -222,8 +222,8 @@ const InsightDetails = () => {
                       <li>
                         <a
                           href="#introduction"
-                          className={`block text-sm hover:text-blue-400 transition-colors ${
-                            activeSection === 'introduction' ? 'text-blue-400 font-semibold' : 'text-gray-400'
+                          className={`block text-sm hover:text-[#6b9dc7] transition-colors ${
+                            activeSection === 'introduction' ? 'text-[#6b9dc7] font-semibold' : 'text-gray-400'
                           }`}
                         >
                           Introduction
@@ -233,8 +233,8 @@ const InsightDetails = () => {
                         <li key={index}>
                           <a
                             href={`#section-${index}`}
-                            className={`block text-sm hover:text-blue-400 transition-colors ${
-                              activeSection === `section-${index}` ? 'text-blue-400 font-semibold' : 'text-gray-400'
+                            className={`block text-sm hover:text-[#6b9dc7] transition-colors ${
+                              activeSection === `section-${index}` ? 'text-[#6b9dc7] font-semibold' : 'text-gray-400'
                             }`}
                           >
                             {section.heading}
@@ -245,8 +245,8 @@ const InsightDetails = () => {
                         <li>
                           <a
                             href="#conclusion"
-                            className={`block text-sm hover:text-blue-400 transition-colors ${
-                              activeSection === 'conclusion' ? 'text-blue-400 font-semibold' : 'text-gray-400'
+                            className={`block text-sm hover:text-[#6b9dc7] transition-colors ${
+                              activeSection === 'conclusion' ? 'text-[#6b9dc7] font-semibold' : 'text-gray-400'
                             }`}
                           >
                             Final Thoughts
@@ -272,10 +272,10 @@ const InsightDetails = () => {
                           href={`/Innosphere_Consulting/insights/${relatedArticle.slug}`}
                           className="block group"
                         >
-                          <div className="text-sm text-blue-400 mb-1">
+                          <div className="text-sm text-[#6b9dc7] mb-1">
                             {relatedArticle.category}
                           </div>
-                          <div className="text-white group-hover:text-blue-400 transition-colors font-semibold">
+                          <div className="text-white group-hover:text-[#6b9dc7] transition-colors font-semibold">
                             {relatedArticle.title}
                           </div>
                         </a>
@@ -300,7 +300,7 @@ const InsightDetails = () => {
             </p>
             <button 
               onClick={() => navigate('/insights')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors shadow-lg shadow-blue-900/30"
+              className="bg-[#6b9dc7] hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors shadow-lg shadow-blue-900/30"
             >
               View All Insights
             </button>

@@ -223,7 +223,7 @@ const SolutionsPage = () => {
           <div className="flex justify-center mt-12">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-800 hover:bg-cyan-600 text-white rounded-lg font-semibold transition-all duration-300 border border-gray-700 hover:border-cyan-500 shadow-lg hover:shadow-cyan-900/30"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-800 hover:bg-[#6b9dc7] text-white rounded-lg font-semibold transition-all duration-300 border border-gray-700 hover:border-cyan-500 shadow-lg hover:shadow-cyan-900/30"
             >
               <span>{showAll ? 'Show Less' : `Show More (${solutionsData.solutions.length - 4} more)`}</span>
               <ChevronRight 
@@ -237,7 +237,7 @@ const SolutionsPage = () => {
       </div>
 
       {/* Professional CTA */}
-      <div className="bg-slate-950 border-t border-gray-800">
+      <div className="">
         <div className="container mx-auto px-6 py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -249,7 +249,7 @@ const SolutionsPage = () => {
             </p>
            <Link to="/consultation"> <button 
               onClick={() => handleNavigation('/consultation')}
-              className="inline-flex items-center bg-cyan-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-900/30"
+              className="inline-flex items-center bg-[#6b9dc7] text-white px-8 py-4 rounded-lg font-semibold hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-900/30"
             >
               <span>Book A Free Consultation Now </span>
               <ChevronRight className="ml-2" size={20} />
