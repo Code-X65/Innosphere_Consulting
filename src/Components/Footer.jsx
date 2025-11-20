@@ -109,10 +109,10 @@ const handleSubscribe = async (e) => {
       {/* Subtle background gradient */}
       <div className="absolute inset-0 from-blue-950/20 via-transparent to-purple-950/20"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="py-10 sm:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div className="flex max-md:flex-col  gap-8 justify-between ">
             
             {/* Left Side - Company Info & Newsletter */}
             <div className="lg:col-span-7 space-y-6">
@@ -122,29 +122,27 @@ const handleSubscribe = async (e) => {
               </a>
               
               {/* Description */}
-              <p className="text-gray-400 text-sm max-w-md leading-relaxed">
+              <p className="text-gray-300 text-sm max-w-md ">
                Strategy. Innovation. Digital Transformation - Built in the UAE.
               </p>
 
               {/* Newsletter */}
            <div className="max-w-md">
-  <h3 className="text-white font-semibold text-base mb-3">
-    Stay Updated
-  </h3>
+
   <form onSubmit={handleSubscribe} className="relative">
     <input
-      type="email"
+      type="email"a
       value={email}
       onChange={(e) => setEmail(e.target.value)}
       placeholder="Enter your email"
       required
       disabled={isSubmitting}
-      className="w-full px-4 py-2.5 pr-12 bg-gray-900/50 border border-gray-700 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-gray-900 transition-all disabled:opacity-50"
+      className="w-full px-4 py-2.5 pr-12 bg-gray-900/50 border border-gray-700 rounded-lg text-gray-300 text-sm placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-gray-900 transition-all disabled:opacity-50"
     />
     <button
       type="submit"
       disabled={isSubmitting}
-      className="absolute right-1.5 top-1/2 -translate-y-1/2 from-blue-600 to-blue-500 text-white p-2 rounded-md hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+      className="absolute right-1.5 top-1/2 -translate-y-1/2 from-blue-600 to-blue-500 text-gray-300 p-2 rounded-md hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
     >
       <Send className="w-4 h-4" />
     </button>
@@ -160,16 +158,7 @@ const handleSubscribe = async (e) => {
     </p>
   )}
 </div>
-
-           
-            </div>
-
-            {/* Right Side - Social Links */}
-            <div className="lg:col-span-5 lg:text-right">
-              <h3 className="text-white font-semibold text-base mb-4 lg:mb-5">
-                Connect With Us
-              </h3>
-              <div className="flex flex-wrap gap-3 lg:justify-end">
+  <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -179,7 +168,7 @@ const handleSubscribe = async (e) => {
                       target="_blank"
                        onClick={() => trackSocialEngagement(social.name)}
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gray-900/50 border border-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30"
+                      className="w-10 h-10 bg-gray-900/50 border border-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-gray-300 hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30"
                       aria-label={social.name}
                     >
                       <Icon className="w-4 h-4" />
@@ -187,8 +176,27 @@ const handleSubscribe = async (e) => {
                   );
                 })}
               </div>
+           
+            </div>
+
+            <div className='' >
+              <ul className='flex flex-col text-gray-300 uppercase font-medium gap-4'>
+            
+              <li className='cursor-pointer hover:text-[#4a7ba7] animation-all duration-300'>About US</li>
+              <li className='cursor-pointer hover:text-[#4a7ba7] animation-all duration-300'>our services</li>
+              <li className='cursor-pointer hover:text-[#4a7ba7] animation-all duration-300'>Industries</li>
+              <li className='cursor-pointer hover:text-[#4a7ba7] animation-all duration-300'>Case Studies</li>
+              <li className='cursor-pointer hover:text-[#4a7ba7] animation-all duration-300'>Academy</li>
+
+              </ul>
+            </div>
+
+            {/* Right Side - Social Links */}
+            <div className="lg:col-span-5 lg:text-right">
+             
+            
                  {/* Contact Info - Compact */}
-              <div className="flex flex-wrap gap-4 sm:gap-6 pt-2">
+              <div className="flex flex-col gap-4 sm:gap-6 pt-2">
                 {contactInfo.map((item, index) => {
                   const Icon = item.icon;
                   return (
@@ -196,14 +204,14 @@ const handleSubscribe = async (e) => {
                       key={index}
                       target='_blank'
                       href={item.href}
-                      className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors group"
+                      className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group"
                     >
                       <Icon className="w-4 h-4 " />
                       <span className="text-xs sm:text-sm">{item.text}</span>
                     </a>
                   );
                 })}
-              </div>
+              </div>  
             </div>
           </div>
         </div>
@@ -211,20 +219,20 @@ const handleSubscribe = async (e) => {
         {/* Bottom Section */}
         <div className="py-5 border-t border-gray-800/50">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-            <p className="text-gray-500">
+            <p className="text-gray-400">
               © {new Date().getFullYear()} Innosphare Consulting FZE LLC. RC-4435 All rights reserved.
             </p>
             
             <div className="flex items-center gap-4">
-              <Link to="/Privacy_Policy" className="text-gray-500 hover:text-blue-400 transition-colors">
+              <Link to="/Privacy_Policy" className="text-gray-400 hover:text-blue-400 transition-colors">
                 Privacy
               </Link>
               <span className="text-gray-700">•</span>
-              <Link to="/Term_&_Condition" className="text-gray-500 hover:text-blue-400 transition-colors">
+              <Link to="/Term_&_Condition" className="text-gray-400 hover:text-blue-400 transition-colors">
                 Terms And Condition
               </Link>
               {/* <span className="text-gray-700">•</span> */}
-              {/* <a href="/cookies" className="text-gray-500 hover:text-blue-400 transition-colors">
+              {/* <a href="/cookies" className="text-gray-400 hover:text-blue-400 transition-colors">
                 Cookies
               </a> */}
             </div>

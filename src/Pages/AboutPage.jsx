@@ -11,6 +11,7 @@ import {
   setupTimeTracking 
 } from '../utils/analytics'
 import FeatureCarousel from '../Components/FeatureCarousel'
+import InnosphereValues from '../Components/InnosphereValues'
 
 const AboutPage = () => {
   useEffect(() => {
@@ -41,6 +42,7 @@ const AboutPage = () => {
       <div data-section="about-us">
         <AboutUs />
       </div>
+      <InnosphereValues />
    
       <div data-section="mission-vision-values">
         <MissionVisionValues />
